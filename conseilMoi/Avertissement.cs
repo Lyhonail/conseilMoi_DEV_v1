@@ -15,7 +15,7 @@ using System.IO;
 using Mono.Data.Sqlite;
 using conseilMoi.Resources.Classes;
 
-namespace conseilMoi
+namespace conseilMoi 
 {
     [Activity(Label = "Avertissement")]
     public class Avertissement : Activity
