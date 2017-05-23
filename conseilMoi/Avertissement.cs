@@ -50,7 +50,7 @@ namespace conseilMoi
                 var dbFile = Path.Combine(docFolder, "data4.sqlite"); // FILE NAME TO USE WHEN COPIED
                 SqliteConnection.CreateFile(dbFile);
 
-                var s = Resources.OpenRawResource(Resource.Raw.data);  // DATA FILE RESOURCE ID
+                var s = Resources.OpenRawResource(Resource.Raw.data);  // DATA FILE RESOURCE ID 
                 FileStream writeStream = new FileStream(dbFile, FileMode.OpenOrCreate, FileAccess.Write);
                 ReadWriteStream(s, writeStream);
 
