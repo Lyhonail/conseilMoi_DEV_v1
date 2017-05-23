@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="53.0dp"
+        android:id="@+id/linearLayout1">
+        <TextView
+            android:text="IdProduit"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/textView2"
+            android:textColor="@android:color/holo_blue_light"
+            android:layout_width="74.5dp"
+            android:layout_height="match_parent" />
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/space1"
+            android:layout_marginRight="36.0dp" />
+        <TextView
+            android:text="NomProduit"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/textView4"
+            android:textColor="@android:color/holo_blue_light"
+            android:layout_width="167.5dp"
+            android:layout_height="match_parent" />
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/space2"
+            android:layout_marginRight="36.0dp" />
+        <TextView
+            android:text="Date"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/textView3"
+            android:textColor="@android:color/background_dark"
+            android:layout_width="69.0dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</LinearLayout>
