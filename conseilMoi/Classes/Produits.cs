@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using conseilMoi.Classes;
 
 namespace conseilMoi.Resources.Classes
 {
@@ -20,6 +21,7 @@ namespace conseilMoi.Resources.Classes
         List<String> allergene = new List<string>();
         List<String> nutriment = new List<string>();
         List<Allergene> allergene_list = new List<Allergene>();
+        List<Nutriment> nutriment_list = new List<Nutriment>();
 
 
         //implémenter les autres champs, on ne fait pas de calcul donc on passe tout en String
@@ -97,6 +99,21 @@ namespace conseilMoi.Resources.Classes
         public List<Allergene> GetCheckAllergene()
         {
             return allergene_list;
+        }
+
+
+        //Ajoute un objet Nutriment contenant ID_typeProfil, ID_profil et ID_critère (= ID_nutriment) cela permetra de dire quel nutriment match avec quel profil en fonction de quel produit
+        public void AddCheckNutriment(String idtp, String idp, String Nut, decimal val_prof, decimal val_prod, decimal vert, decimal orange, decimal rouge)
+        {
+            Nutriment N = new Nutriment();
+            N.CreeNutriment(idtp, idp, Nut, val_prod, val_prof, vert, orange, rouge);
+            nutriment_list.Add(N);
+        }
+
+
+        public List<Nutriment> GetCheckNutriment()
+        {
+            return nutriment_list;
         }
 
 

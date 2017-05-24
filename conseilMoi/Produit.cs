@@ -12,6 +12,7 @@ using Android.Widget;
 using ZXing.Mobile;
 using conseilMoi.Resources.MaBase;
 using conseilMoi.Resources.Classes;
+using conseilMoi.Classes;
 
 namespace conseilMoi
 {
@@ -25,7 +26,7 @@ namespace conseilMoi
 
             //initialise la classe MaBase et connecte la base de donnnées
             MaBase db = new MaBase();
-            db.ExistBase();
+            db.ExistBase(this);
 
             //initialise le scanner de code barre
             MobileBarcodeScanner.Initialize(Application);
@@ -34,7 +35,7 @@ namespace conseilMoi
             string IDproduit = Intent.GetStringExtra("IDproduit") ?? "Data not available";
             string IDTypeProfil = "PERS";
 
-            
+
 
 
             //chargement des variables des boutons et textViews
@@ -46,6 +47,7 @@ namespace conseilMoi
             var txtIdProduit = FindViewById<TextView>(Resource.Id.textViewIdProduit);
             var txtInfoScan = FindViewById<TextView>(Resource.Id.textViewInfoScan);
             var txtInfoAllergene = FindViewById<TextView>(Resource.Id.textViewInfoAlergene);
+            var txtInfoNutriment = FindViewById<TextView>(Resource.Id.textViewInfoNutriment);
 
 
             //Fait un enregistrement dans historique
@@ -61,18 +63,44 @@ namespace conseilMoi
             //txtInfoAllergene.Text = produits.GetAllergenes();
             //txtInfoAllergene.Text = produits.GetNutriments();
 
+            /* VERIFIE LES ALLERGENES */
             List<Allergene> ListAl = new List<Allergene>();
-
             ListAl = produits.GetCheckAllergene();
 
-            try {
-                if (ListAl[0].GetIdAlergene() == "") { txtInfoAllergene.Text = "pas d'allergene"; } 
+            try
+            {
+                if (ListAl[0].GetIdAlergene() == "") { txtInfoAllergene.Text = "pas d'allergene"; }
                 else { txtInfoAllergene.Text = "contient allergene correspondant a votre profil !"; }
             }
 
-            catch {
+            catch
+            {
                 txtInfoAllergene.Text = "pas d'allergene";
             }
+            /* FIN VERIFIE LES ALLERGENES */
+
+            /* VERIFIE LES NUTRIMENTS  */
+            List<Nutriment> ListNut = new List<Nutriment>();
+            ListNut = produits.GetCheckNutriment();
+
+            try
+            {
+                if (ListNut[0].GetIdNutriment() == "") { txtInfoNutriment.Text = "pas d'allergene"; }
+                else
+                {
+                    txtInfoNutriment.Text = ListNut[0].GetIdTypeProfil() + " " + ListNut[0].GetIdProfil() + " " + ListNut[0].GetIdNutriment() + " " +
+                                             ListNut[0].GetValeurProfil() + " " + ListNut[0].GetValeurProduit() + " " +
+                                             ListNut[0].GetVert() + " " + ListNut[0].GetOrange() + " " + ListNut[0].GetRouge();
+                }
+            }
+
+            catch
+            {
+                txtInfoNutriment.Text = "pas de nutriment avec erreur";
+            }
+            /* FIN VERIFIE LES NUTRIMENTS   */
+
+
 
             //Lorsque l'on clique sur le bouton menuProfil
             menuProfil.Click += delegate

@@ -15,6 +15,7 @@ namespace conseilMoi
         {
             base.OnCreate(bundle);
 
+            /*
             var docFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             //Console.WriteLine("Data path:" + Database.DatabaseFilePath);
             var dbFile = Path.Combine(docFolder, "data4.sqlite"); // FILE NAME TO USE WHEN COPIED
@@ -24,14 +25,14 @@ namespace conseilMoi
                 FileStream writeStream = new FileStream(dbFile, FileMode.OpenOrCreate, FileAccess.Write);
                 ReadWriteStream(s, writeStream);
             }
-
+            */
             MaBase db = new MaBase();
-            db.ExistBase();
+            db.ExistBase(this);
             db.ConnexionOpen();
             db.ConnexionClose();
 
             StartActivity(typeof(Avertissement));
-            
+
         }
 
         private void ReadWriteStream(Stream readStream, Stream writeStream)

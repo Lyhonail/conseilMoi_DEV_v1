@@ -41,7 +41,7 @@
         android:id="@+id/menuProduitInfos"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="180dp">
+        android:layout_height="wrap_content">
         <TextView
             android:text="Large Text"
             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -63,6 +63,12 @@
             android:layout_height="70dp"
             android:id="@+id/textViewInfoAlergene"
             android:textColor="#000000" />
+        <TextView
+            android:text="Large Text"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:id="@+id/textViewInfoNutriment"
+            android:textColor="#111111" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/menuAvertissement"

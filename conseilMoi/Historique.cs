@@ -26,7 +26,7 @@ namespace conseilMoi
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            db.ExistBase();
+            db.ExistBase(this);
             SetContentView(Resource.Layout.Historique);
 
             /*var lv = FindViewById<TextView>(Resource.Id.textViewTest);
