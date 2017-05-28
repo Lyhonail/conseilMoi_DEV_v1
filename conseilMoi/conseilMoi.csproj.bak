@@ -16,7 +16,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v5.1</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -79,6 +79,7 @@
     <Compile Include="Classes\Allergene.cs" />
     <Compile Include="Classes\Historiques.cs" />
     <Compile Include="Classes\ListViewAdapterHistorique.cs" />
+    <Compile Include="Classes\Nutriment.cs" />
     <Compile Include="Classes\Produits.cs" />
     <Compile Include="Conseil.cs" />
     <Compile Include="Historique.cs" />
